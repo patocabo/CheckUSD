@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/initialFragment">
+
+    <fragment
+        android:id="@+id/initialFragment"
+        android:name="com.example.checkusd.InitialFragment"
+        android:label="fragment_initial"
+        tools:layout="@layout/fragment_initial" >
+        <action
+            android:id="@+id/action_initialFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currencyFragment"
+        android:name="com.example.checkusd.CurrencyFragment"
+        android:label="fragment_currency"
+        tools:layout="@layout/fragment_currency" >
+        <action
+            android:id="@+id/action_currencyFragment_to_initialFragment"
+            app:destination="@id/initialFragment" />
+        <action
+            android:id="@+id/action_currencyFragment_to_usdFragment"
+            app:destination="@id/usdFragment" />
+        <action
+            android:id="@+id/action_currencyFragment_to_euroFragment"
+            app:destination="@id/euroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usdFragment"
+        android:name="com.example.checkusd.UsdFragment"
+        android:label="fragment_usd"
+        tools:layout="@layout/fragment_usd" >
+        <action
+            android:id="@+id/action_usdFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/euroFragment"
+        android:name="com.example.checkusd.EuroFragment"
+        android:label="fragment_euro"
+        tools:layout="@layout/fragment_euro" >
+        <action
+            android:id="@+id/action_euroFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+    </fragment>
+</navigation>
